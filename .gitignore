@@ -1,0 +1,71 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── Training logs ─────────────────────────────────────────────────────────────
+# Keep .gitignore itself but exclude all training output logs
+training_*.log
+*.log
+
+# ── Model checkpoints ─────────────────────────────────────────────────────────
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+# Raw and processed data should never be committed — see DATA_SETUP.md
+/data/
+*.npy
+*.parquet
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+
+# ── Figures / plots produced at runtime ──────────────────────────────────────
+# Keep intentionally-committed figures (like the paper figures at repo root)
+# Exclude runtime-generated plots:
+figure_runtime_*.png
+figure_runtime_*.pdf
+*_plots/
+
+# ── Weights & Biases ──────────────────────────────────────────────────────────
+wandb/
+
+# ── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── IDE / editor ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ── HuggingFace model cache ───────────────────────────────────────────────────
+# Models downloaded by transformers are large — do not commit
+~/.cache/huggingface/
+.cache/
+
+# ── Temporary / misc ──────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
