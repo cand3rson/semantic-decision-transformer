@@ -30,6 +30,25 @@ CUDA_VISIBLE_DEVICES=0 python3 ...
 
 ---
 
+## Section 0 — Paper Q1 / Fig. 2: Kinematics-Only Baselines (no semantic grounding)
+
+These runs establish the **tail-risk baseline before semantic grounding** for each backbone.
+They are identical to the SEMDT runs below but with `--enable_visiontrap` removed,
+so `L_text = 0` throughout training — purely kinematic trajectory learning.
+
+```bash
+bash run_dt_kinematics_only.sh        # DT backbone
+bash run_gpt2_kinematics_only.sh      # GPT-2 backbone
+bash run_llama_kinematics_only.sh     # LLaMA backbone
+bash run_qwen_kinematics_only.sh      # Qwen backbone
+bash run_deepseek_kinematics_only.sh  # DeepSeek backbone
+```
+
+Compare the MR@5m from these runs against the SEMDT INTENT runs (Section 1 & 3)
+to reproduce **Fig. 2** in the paper.
+
+---
+
 ## Section 1 — Paper: Core SEMDT (DT backbone)
 
 ### 1.1 Best run — SEMDT INTENT, λ=0.1
@@ -69,6 +88,20 @@ python3 trajectory_experiment_visiontrap.py \
     --lateral_weight 2.5 \
     --time_weighting none \
     2>&1 | tee training_semdt_best_$(date +%Y%m%d_%H%M%S).log
+```
+
+---
+
+## Section 1b — Paper Table II: All Backbones at λ=0.1 (SEMDT INTENT)
+
+Use these scripts to reproduce **Table II** (backbone comparison under identical supervision):
+
+```bash
+bash run_dt_vlm_lambda_01_test.sh        # DT  → ADE=1.67, FDE=3.27, MR=12.8%
+bash run_gpt2_vlm_lambda_01_test.sh      # GPT-2 → ADE=2.05, FDE=4.44, MR=25.5%
+bash run_llama_vlm_lambda_01_test.sh     # LLaMA → ADE=3.42, FDE=7.25, MR=68.2%
+bash run_qwen_vlm_lambda_01_test.sh      # Qwen  → ADE=3.36, FDE=6.39, MR=65.0%
+bash run_deepseek_vlm_lambda_01_test.sh  # DeepSeek → ADE=3.52, FDE=8.20, MR=69.3%
 ```
 
 ---
