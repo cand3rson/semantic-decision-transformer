@@ -6,7 +6,7 @@
 # Kinematics-only baseline for Q1 comparison (Fig. 2 in paper).
 # ============================================================================
 
-cd /home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes
+cd "$(dirname "$0")"
 
 python3 trajectory_experiment_llama_vlm.py \
     --dataset_path /data/nuscenes_fixed_matrices \

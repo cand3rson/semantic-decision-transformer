@@ -10,7 +10,7 @@
 # Paper result: DT kinematics-only → substantial tail-risk before grounding
 # ============================================================================
 
-cd /home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes
+cd "$(dirname "$0")"
 
 python3 trajectory_experiment_visiontrap.py \
     --dataset_path /data/nuscenes_fixed_matrices \

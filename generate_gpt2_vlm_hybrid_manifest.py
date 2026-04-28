@@ -745,7 +745,7 @@ if __name__ == "__main__":
                        default="/data/nuplan_text_finetuned/nuplan_text_manifest_vlm_metadata_enhanced.parquet",
                        help="Output path for enhanced manifest (default: vlm_metadata_enhanced.parquet - does NOT overwrite best run)")
     parser.add_argument("--gpt2_model_path", type=str,
-                       default="/home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes/gpt2_finetuned_model_improved")
+                       default=str(Path(__file__).parent / "gpt2_finetuned_model_improved"))
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--max_scenes", type=int, default=130)
     parser.add_argument("--vlm_usage_ratio", type=float, default=1.0,

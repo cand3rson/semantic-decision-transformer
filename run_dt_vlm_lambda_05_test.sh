@@ -7,7 +7,7 @@
 #
 # Expected: Text alignment will dominate, trajectory accuracy may degrade
 
-cd /home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes
+cd "$(dirname "$0")"
 
 echo "================================================================================"
 echo "LAMBDA SENSITIVITY TEST: λ = 0.5"

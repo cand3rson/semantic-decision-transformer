@@ -8,7 +8,7 @@
 #
 # Expected: Performance degradation similar to DT results
 
-cd /home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes
+cd "$(dirname "$0")"
 
 echo "================================================================================"
 echo "GPT-2 + VLM LAMBDA SENSITIVITY TEST: λ = 0.5"

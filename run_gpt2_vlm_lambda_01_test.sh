@@ -6,7 +6,7 @@
 # Reproduces Table II entry for GPT2.
 # ============================================================================
 
-cd /home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes
+cd "$(dirname "$0")"
 
 python3 trajectory_experiment_gpt2_vlm.py \
     --dataset_path /data/nuscenes_fixed_matrices \

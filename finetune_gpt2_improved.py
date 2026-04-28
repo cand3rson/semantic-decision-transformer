@@ -158,8 +158,8 @@ def generate_samples(model, tokenizer, device, n_samples=5):
 
 def main():
     # Config - use the improved training data
-    data_dir = Path('/home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes')
-    output_dir = Path('/home/chris/CascadeProjects/decision-transformer-ref-for-nuscenes/gpt2_finetuned_model_improved')
+    data_dir = Path(__file__).parent.resolve()
+    output_dir = data_dir / 'gpt2_finetuned_model_improved'
     output_dir.mkdir(exist_ok=True)
     
     device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
